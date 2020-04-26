@@ -1,4 +1,5 @@
-const fs = require('fs');
+const validator = require('validator');
+const getNotes = require('./notes');
 
-fs.writeFileSync('notes.txt', 'Hello! Writing to the file first time! ')
-fs.appendFileSync('notes.txt', 'This is being appended to the end');
+console.log(validator.isURL('https:mead.io'));
+console.log(getNotes());

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/chadsmith12/complete-nodejs-course/issues"
   },
-  "homepage": "https://github.com/chadsmith12/complete-nodejs-course#readme"
+  "homepage": "https://github.com/chadsmith12/complete-nodejs-course#readme",
+  "dependencies": {
+    "validator": "^13.0.0"
+  }
 }
