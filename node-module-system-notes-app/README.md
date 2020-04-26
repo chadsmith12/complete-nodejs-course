@@ -22,4 +22,8 @@ In the `package.json` you can set the `type` to `module`. With this you can then
 import fs from 'fs'
 ```
 
+---
+## Examples
 
+### File System Example
+The `file-system-example.js` shows the basic examples of using the file system module. It shows writing text to a file and also appending text to a file.
