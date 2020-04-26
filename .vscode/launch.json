@@ -7,6 +7,15 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Notes App",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/node-module-system-notes-app/app.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "First Node Script",
             "skipFiles": [
                 "<node_internals>/**"

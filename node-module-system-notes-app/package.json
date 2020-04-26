@@ -1,0 +1,19 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "Basic notes app to learn how to use nodes module system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chadsmith12/complete-nodejs-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chadsmith12/complete-nodejs-course/issues"
+  },
+  "homepage": "https://github.com/chadsmith12/complete-nodejs-course#readme"
+}
