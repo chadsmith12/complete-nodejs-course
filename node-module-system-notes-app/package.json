@@ -4,6 +4,7 @@
   "description": "Basic notes app to learn how to use nodes module system",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,11 @@
   },
   "homepage": "https://github.com/chadsmith12/complete-nodejs-course#readme",
   "dependencies": {
-    "validator": "^13.0.0"
+    "chalk": "^4.0.0",
+    "validator": "^13.0.0",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }

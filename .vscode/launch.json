@@ -11,7 +11,8 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/node-module-system-notes-app/app.js"
+            "program": "${workspaceFolder}/node-module-system-notes-app/app.js",
+            "console": "integratedTerminal"
         },
         {
             "type": "node",
