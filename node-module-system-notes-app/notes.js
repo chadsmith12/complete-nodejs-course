@@ -44,6 +44,14 @@ function removeNote(title)  {
 }
 
 /**
+ * Returns all of the notes titles.
+ * @returns {Array} Titles of all the notes.
+ */
+function listNotes() {
+    return loadNotes().map(note => note.title);
+}
+
+/**
  * Loads the notes up from the notes.json file.
  * If the file can't load, will return an empty array.
  * @returns {Array} The array of notes.
@@ -71,5 +79,6 @@ function saveNotes(notes) {
 module.exports = {
     getNotes,
     addNote,
-    removeNote
+    removeNote,
+    listNotes
 };

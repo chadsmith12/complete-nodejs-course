@@ -49,7 +49,11 @@ yargs.command({
     command: 'list',
     describe: 'List your notes',
     handler: () => {
-        console.log(chalk.blue("Listing your note!"));
+        console.log(chalk.blue('Your current notes: '))
+        const currentNotes = notes.listNotes();
+        currentNotes.forEach(note => {
+            console.log(note)
+        });
     }
 });
 
