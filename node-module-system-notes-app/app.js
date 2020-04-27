@@ -60,8 +60,20 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'Read your notes',
-    handler: () => {
-        console.log(chalk.blue("Reading your note!"));
+    builder:  {
+        title: {
+            describe: 'Title of the note',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: (argv) => {
+        const note = notes.getNote(argv.title);
+        if(!note) {
+            console.log(chalk.red("Could not find note!"));
+        } else {
+            console.log(note.body);
+        }
     }
 });
 

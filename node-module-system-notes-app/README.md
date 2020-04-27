@@ -72,3 +72,32 @@ You can see the full documentation of running npm commands here: https://docs.np
 
 ### File System Example
 The `file-system-example.js` shows the basic examples of using the file system module. It shows writing text to a file and also appending text to a file.
+
+### Notes App
+The Notes application was the application built to demonstrate loading and using node modules. This application showed examples of:
+
+* Loading built-in node modules
+* Loading your own node modules
+* Loading third-party node modules
+
+The files for this application is `app.js` and `notes.js`. It's a  very simple command line application that allows you to add notes from your terminal. The application takes in command line arguments. The following are the commands and arguments for each command:
+
+* `add` - Adds a new note
+    * `title` - The title of the note
+    *  `body` - The body of the note
+* `remove` - Removes a note
+    * `title` - The title of the note
+* `list` - Lists all the notes that you have
+* `read` - Lets you read a note you have previously taken.
+    * `title` - The title of the note.
+
+#### Example Usage
+Here is an example on how to add a new note:
+```sh
+node app.js add --title="New Note" --body="This is my new note to demonstrate"
+```
+
+Or how  to remove a note:
+```sh
+node app.js remove --title="New Note"
+```

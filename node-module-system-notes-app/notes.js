@@ -1,9 +1,5 @@
 const fs = require('fs');
 
-function getNotes() {
-    return 'Your notes...';
-}
-
 /**
  * Adds a new note to the notes file.
  * Will not add a note if the title is being duplicated.
@@ -52,6 +48,22 @@ function listNotes() {
 }
 
 /**
+ * Gets a note by the title
+ * @param {String} title The title of the note.
+ * @returns {Object} the note found, otherwise null if it can't find the note.
+ */
+function getNote(title) {
+    const notes = loadNotes();
+    const foundNote = notes.find(note => note.title === title);
+
+    if(!foundNote) {
+        return null;
+    }
+
+    return foundNote;
+}
+
+/**
  * Loads the notes up from the notes.json file.
  * If the file can't load, will return an empty array.
  * @returns {Array} The array of notes.
@@ -77,8 +89,8 @@ function saveNotes(notes) {
 }
 
 module.exports = {
-    getNotes,
     addNote,
     removeNote,
-    listNotes
+    listNotes,
+    getNote
 };
