@@ -1,0 +1,23 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Basic weather app in node.js to demonstrate async node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chadsmith12/complete-nodejs-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chadsmith12/complete-nodejs-course/issues"
+  },
+  "homepage": "https://github.com/chadsmith12/complete-nodejs-course#readme",
+  "devDependencies": {
+    "postman-request": "^2.88.1-postman.22"
+  },
+  "dependencies": {}
+}

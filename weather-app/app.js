@@ -1,11 +1,25 @@
-console.log("Starting...");
+const getWeatherForecast = require('./utils/forecast');
+const geocode = require('./utils/geocode');
 
-setTimeout(() => {
-    console.log("2 Second Timer!");
-}, 2000);
+const location = process.argv[2];
+if(!location) {
+    console.log('Please enter a location');
+}
+else {
+    geocode(location, (err, response) => {
+        if(err) {
+            console.log(err.message);
+        } else {
+            getWeatherForecast(response, (weatherErr, weatherResponse) => {
+                if(weatherErr) {
+                    console.log(weatherErr.message);
+                }
+                else {
+                    const forecast = `Currently in ${response.placeName} it is ${weatherResponse}`
+                    console.log(forecast);
+                }
+            })
+        }
+    })
+}
 
-setTimeout(() => {
-    console.log("0 Second Timer");
-}, 0)
-
-console.log("Stopping...");
