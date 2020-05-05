@@ -1,23 +1,13 @@
+const path = require('path');
 const express = require('express');
+
+const staticAssets = path.join(__dirname, '../static');
 
 const app = express();
 
+app.use(express.static(staticAssets));
+
 // routes
-app.get('', (req, res) => {
-    res.send('<h1>Weather</h1>');
-})
-
-app.get('/help', (req, res) => {
-    res.send({
-        name: 'Chad',
-        age: 30
-    });
-})
-
-app.get('/about', (req, res) => {
-    res.send('<h1>About Page</h1>');
-})
-
 app.get('/weather', (req, res) => {
     res.send({
         location: 'Arlington, Texas',
