@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/chadsmith12/complete-nodejs-course#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "hbs": "^4.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
