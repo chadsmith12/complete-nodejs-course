@@ -1,11 +1,20 @@
 const path = require('path');
 const express = require('express');
+const hbs = require('hbs');
 
+// express config paths
 const staticAssets = path.join(__dirname, '../static');
+const viewsPath = path.join(__dirname, '../templates/views');
+const partialsPath = path.join(__dirname, '../templates/partials');
 
 const app = express();
 
+// setting up view engine for hbs views directory
 app.set('view engine', 'hbs');
+app.set('views', viewsPath);
+hbs.registerPartials(partialsPath)
+
+// setup the express static directory paths.
 app.use(express.static(staticAssets));
 
 // routes

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>Help</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <h1>{{title}}</h1>
-    <img src="./images/profile-photo.jpeg" alt="Profile Photo">
-    <p>Created by, {{name}}</p>
+    {{>header}}
+    <p>{{msg}}</p>
+    {{>footer}}
 </body>
 </html>
