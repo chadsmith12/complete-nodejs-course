@@ -1,6 +1,8 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
+const getWeatherForecast = require('./utils/forecast');
+const geocode = require('./utils/geocode');
 
 // express config paths
 const staticAssets = path.join(__dirname, '../static');
@@ -40,10 +42,44 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
+    const address = req.query.address;
+    if(!address) {
+        return res.send({
+            error: 'You must provide an address'
+        });
+    }
+
+    geocode(address, (err, geoCodeRes) => {
+        if(err) {
+            return res.send({
+                error: err.message
+            })
+        }
+        getWeatherForecast(geoCodeRes, (err, weatherRes) => {
+            if(err) {
+                return res.send({
+                    error: err.message
+                });
+            }
+            const forecast = `Currently in ${geoCodeRes.placeName} it is ${weatherRes}`
+            res.send({
+                location: geoCodeRes.placeName,
+                address: address,
+                forecast: forecast
+            })
+        })
+    })
+})
+
+app.get('/products', (req, res) => {
+    if(!req.query.search) {
+        res.send({
+            error: 'Must provide search term'
+        })
+    }
+
     res.send({
-        location: 'Arlington, Texas',
-        currentTemp: 74,
-        feelsLike: 73
+        products: []
     });
 })
 
