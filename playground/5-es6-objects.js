@@ -8,8 +8,9 @@ const user = {
     location: 'Texas'
 }
 
-const transaction = (type, {name, location}) => {
+const transaction = (type, {name = "User", location = "Somewhere"} = {}) => {
     console.log(type, name, location);
 }
 
+transaction('order')
 transaction('order', user)
