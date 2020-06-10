@@ -47,6 +47,21 @@ app.get('/weather', (req, res) => {
     });
 })
 
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: 'Not Found',
+        name: 'Chad Smith',
+        errorMessage: 'Oops! Help Article Not Found!'
+    })
+})
+
+app.get('*',  (req,  res) => {
+    res.render('404', {
+        title: 'Not Found',
+        name: 'Chad Smith',
+        errorMessage: 'Oops! Page Not Found!'
+    })
+})
 
 // startup server
 app.listen(3000, () => {
