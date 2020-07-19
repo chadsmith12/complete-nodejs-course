@@ -2,7 +2,13 @@ console.log("Client side javascript file is loaded!");
 
 const locationForm = document.querySelector('#locationForm');
 const searchText = document.querySelector('#search');
+const messageInfoElem  = document.querySelector('#messageInfo')
+const weatherInfoElem = document.querySelector('#weatherInformation');
 
+const setMessages = (messageInfo, weatherInfo) => {
+    messageInfoElem.textContent = messageInfo;
+    weatherInfoElem.textContent = weatherInfo;
+}
 
 const getWeather = (searchLocation) => {
     const url = `/weather?address=${searchLocation}`;
@@ -22,15 +28,15 @@ locationForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = searchText.value;
     if(!location) {
-        console.log('Please enter a location');
+        setMessages('Plese enter a location', '');
         return false;
     }
+    setMessages('Loading...', '');
     getWeather(location).then((data) => {
         if(data.error)  {
-            console.log(data.error)
+            setMessages(data.error, '');
         } else  {
-            console.log(data.forecast)
-            console.log(data.location);
+            setMessages(data.forecast, data.location);
         }
     });
 });
