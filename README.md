@@ -10,3 +10,4 @@ Each module of the course will be broken up into seperate directories with a REA
     This module you create a basic notes application that runs your in your terminal.  While building this application you learn how to load in node modules that already built into node, your own, and third-party.
 * [Async NodeJS - Weather App - Terminal](weather-app/) - This module you learn the basics of async NodeJS and create 
     a basic weather application that runs from the command line. You learn how to call out to HTTP Web Api's to get the weather.
+* [Weather App - Browser](webserver/) - This module you learn about using Express and Node together to create a basic application that allows you to search and see the weathet for your location.
